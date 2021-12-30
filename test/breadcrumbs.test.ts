@@ -1,4 +1,4 @@
-import { CATEGORY_LEVEL_0, CATEGORY_LEVEL_1 } from '../src/constants'
+import { CATEGORY_LEVEL_0, CATEGORY_LEVEL_1 } from '../src/anOtherModuleFarAway/constants'
 import { buildBreadCrumb } from '../src/buildBreadCrumb'
 
 const initialState = [
@@ -65,7 +65,7 @@ describe('#breadcrumbs', () => {
         ])
     })
     it('should return breadcrumbs with home and supplier when supplier is selected', () => {
-        expect(buildBreadCrumb(null, null, 'Fertiberia')).toEqual([
+        expect(buildBreadCrumb('Fertiberia', null, null)).toEqual([
             ...initialState,
             {
                 name: 'Fertiberia',
